@@ -15,7 +15,10 @@ function App() {
       </div>
       <footer>
         Coded by
-        <a href="https://github.com/zahraf1998/weather-app" target="_blank">
+        <a
+          href="https://github.com/zahraf1998/react-weather-app"
+          target="_blank"
+        >
           Zahra F.
         </a>
         Icons by
