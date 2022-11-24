@@ -1,0 +1,33 @@
+.forecast-img {
+  width: 100%;
+}
+
+.forecast-container,
+.card-header,
+.card-footer {
+  border: none;
+}
+.forecast-container {
+  transition: all 200ms ease-in-out;
+}
+
+.forecast-container:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-temp {
+  font-size: 13px;
+}
+
+.forecast-temp-max {
+  margin-right: 5px;
+}
+
+.card-body {
+  background-color: #c3e7f4;
+}
+
+.card-header,
+.card-footer {
+  background-color: #a1d5e8;
+}

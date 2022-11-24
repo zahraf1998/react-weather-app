@@ -1,0 +1,25 @@
+.current-day {
+  background: #c3e7f4;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+.current-temp {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.time {
+  opacity: 0.6;
+}
+
+.description {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -12px;
+}
