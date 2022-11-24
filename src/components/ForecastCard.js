@@ -7,7 +7,11 @@ export default function ForecastCard() {
       <div className="card text-bg-light mb-3 forecast-container">
         <div className="card-header forecast-date">Tue</div>
         <div className="card-body p-1 forecast-img">
-          <img src="" className="forecast-img"></img>
+          <img
+            src="./01d.svg"
+            className="forecast-img"
+            alt="weather icon"
+          ></img>
         </div>
         <div className="card-footer p-1 pt-2 pb-2 forecast-temp">
           <span className="forecast-temp-max"> 18° </span>

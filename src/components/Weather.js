@@ -15,16 +15,16 @@ export default function Weather() {
           </div>
         </div>
         <div className="col text-center">
-          <img src="" id="today-icon" />
+          <img src="./01d.svg" id="today-icon" alt="today weather" />
         </div>
         <div className="col">
           <span className="current-temp">12</span>
           <span className="units">
-            <a href="#" id="celsius" className="active">
+            <a href="/" id="celsius" className="active">
               °C
             </a>
             |
-            <a href="#" id="fahrenheit">
+            <a href="/" id="fahrenheit">
               °F
             </a>
             <ul>
