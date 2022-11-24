@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import icon from "./01d.svg";
 
 export default function Weather() {
   return (
@@ -15,7 +16,7 @@ export default function Weather() {
           </div>
         </div>
         <div className="col text-center">
-          <img src="./01d.svg" id="today-icon" alt="today weather" />
+          <img src={icon} id="today-icon" alt="today weather" />
         </div>
         <div className="col">
           <span className="current-temp">12</span>
