@@ -18,11 +18,12 @@ function App() {
         <a
           href="https://github.com/zahraf1998/react-weather-app"
           target="_blank"
+          rel="noreferrer"
         >
           Zahra F.
         </a>
         Icons by
-        <a href="https://github.com/basmilius" target="_blank">
+        <a href="https://github.com/basmilius" target="_blank" rel="noreferrer">
           Bas Milius
         </a>
       </footer>
