@@ -13,9 +13,9 @@ export default function Temperature({ temp }) {
     <div>
       {unit === "celsius" ? (
         <>
-          <span className="current-temp">{Math.round(temp)}</span>
+          <span className="current-temp">{Math.round(temp)}</span>{" "}
           <span className="units">
-            °C |
+            °C|
             <a href="/" onClick={changeUnit}>
               °F
             </a>
@@ -23,7 +23,7 @@ export default function Temperature({ temp }) {
         </>
       ) : (
         <>
-          <span className="current-temp">{Math.round(temp * 1.8 + 32)}</span>
+          <span className="current-temp">{Math.round(temp * 1.8 + 32)}</span>{" "}
           <span className="units">
             <a href="/" onClick={changeUnit}>
               °C
