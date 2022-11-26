@@ -2,38 +2,33 @@ import React from "react";
 import "./Weather.css";
 import icon from "./01d.svg";
 
-export default function Weather() {
+export default function Weather({ data }) {
   return (
     <div className="Weather">
       <div className="row align-items-center current-day">
         <div className="col">
-          <h1 id="city">Tehran</h1>
+          <h1 id="city">{data.name}</h1>
           <div className="time">
-            Last uptated: <span id="time">Monday 12:05</span>
+            Last uptated: <span>Monday 12:05</span>
           </div>
-          <div className="description" id="description">
-            Clear
-          </div>
+          <div className="description">{data.description}</div>
         </div>
         <div className="col text-center">
-          <img src={icon} id="today-icon" alt="today weather" />
+          <img src={icon} alt="today weather" />
         </div>
         <div className="col">
-          <span className="current-temp">12</span>
+          <span className="current-temp">{Math.round(data.temp)}</span>
           <span className="units">
-            <a href="/" id="celsius" className="active">
+            <a href="/" className="active">
               °C
             </a>
-            |
-            <a href="/" id="fahrenheit">
-              °F
-            </a>
+            |<a href="/">°F</a>
             <ul>
               <li>
-                Humidity: <span id="humidity">80</span> %
+                Humidity: <span id="humidity">{data.humidity}</span> %
               </li>
               <li>
-                Wind: <span id="wind">1.2</span> Km/h
+                Wind: <span id="wind">{data.wind}</span> Km/h
               </li>
             </ul>
           </span>
