@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 
-export default function Form() {
+export default function Form({ changeCity }) {
+  const [value, setValue] = useState("");
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    changeCity(value);
+  }
+
   return (
     <div className="Form">
-      <form id="search-form">
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <div className="row text-center">
             <div className="col-8">
               <input
-                type="text"
+                type="search"
                 placeholder="Enter a city ..."
                 className="form-control"
-                id="search-input"
                 autoComplete="off"
+                onChange={handleChange}
               />
             </div>
             <div className="col-1">
@@ -22,11 +33,7 @@ export default function Form() {
               </button>
             </div>
             <div className="col-3">
-              <button
-                type="button"
-                className="btn btn-secondary location"
-                id="current-button"
-              >
+              <button type="button" className="btn btn-secondary location">
                 <i className="fa-solid fa-location-dot"></i>
               </button>
             </div>
