@@ -7,7 +7,7 @@ export default function Weather({ data }) {
     <div className="Weather">
       <div className="row align-items-center current-day">
         <div className="col">
-          <h1 id="city">{data.name}</h1>
+          <h1>{data.name}</h1>
           <div className="time">
             Last uptated: <span>Monday 12:05</span>
           </div>
@@ -24,12 +24,8 @@ export default function Weather({ data }) {
             </a>
             |<a href="/">°F</a>
             <ul>
-              <li>
-                Humidity: <span id="humidity">{data.humidity}</span> %
-              </li>
-              <li>
-                Wind: <span id="wind">{data.wind}</span> Km/h
-              </li>
+              <li>Humidity: {data.humidity} %</li>
+              <li>Wind: {data.wind} Km/h</li>
             </ul>
           </span>
         </div>

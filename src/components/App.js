@@ -10,7 +10,7 @@ function App() {
   const [city, setCity] = useState("Tehran");
 
   function displayData(response) {
-    console.log(response);
+    console.log("dd");
     setData({
       ready: true,
       name: response.data.name,
@@ -23,17 +23,18 @@ function App() {
     });
   }
 
-  if (!data.ready) {
+  function getData() {
     let apiKey = "203fa770242fcd2b9555d832a88ea567";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get().then(displayData);
+    axios.get(url).then(displayData);
   }
 
+  if (!data.ready) getData();
   return (
     <div className="App">
       <div className="container">
-        <Form changeCity={setCity} />
+        <Form changeCity={setCity} getData={getData} />
         <hr />
         <Weather data={data} />
         <hr />

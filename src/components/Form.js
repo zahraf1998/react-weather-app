@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Form.css";
 
-export default function Form({ changeCity }) {
-  const [value, setValue] = useState("");
-
+export default function Form({ changeCity, getData }) {
   function handleChange(e) {
-    setValue(e.target.value);
+    changeCity(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    changeCity(value);
+    getData();
   }
 
   return (
