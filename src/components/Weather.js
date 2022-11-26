@@ -1,6 +1,6 @@
 import React from "react";
 import "./Weather.css";
-import icon from "./01d.svg";
+import Icon from "./Icon";
 
 export default function Weather({ data }) {
   return (
@@ -14,7 +14,7 @@ export default function Weather({ data }) {
           <div className="description">{data.description}</div>
         </div>
         <div className="col text-center">
-          <img src={icon} alt="today weather" />
+          <Icon code={data.icon} />
         </div>
         <div className="col">
           <span className="current-temp">{Math.round(data.temp)}</span>
