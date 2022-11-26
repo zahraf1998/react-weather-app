@@ -30,32 +30,39 @@ function App() {
     axios.get(url).then(displayData);
   }
 
-  if (!data.ready) getData();
-  return (
-    <div className="App">
-      <div className="container">
-        <Form changeCity={setCity} getData={getData} />
-        <hr />
-        <Weather data={data} />
-        <hr />
-        <Forecast />
+  if (!data.ready) {
+    getData();
+    return <div className="container">Loading...</div>;
+  } else {
+    return (
+      <div className="App">
+        <div className="container">
+          <Form changeCity={setCity} getData={getData} />
+          <hr />
+          <Weather data={data} />
+          <hr />
+          <Forecast />
+        </div>
+        <footer>
+          Coded by
+          <a
+            href="https://github.com/zahraf1998/react-weather-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Zahra F.
+          </a>
+          Icons by
+          <a
+            href="https://github.com/basmilius"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Bas Milius
+          </a>
+        </footer>
       </div>
-      <footer>
-        Coded by
-        <a
-          href="https://github.com/zahraf1998/react-weather-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Zahra F.
-        </a>
-        Icons by
-        <a href="https://github.com/basmilius" target="_blank" rel="noreferrer">
-          Bas Milius
-        </a>
-      </footer>
-    </div>
-  );
+    );
+  }
 }
-
 export default App;
