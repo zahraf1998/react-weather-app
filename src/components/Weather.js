@@ -1,6 +1,7 @@
 import React from "react";
 import "./Weather.css";
 import Icon from "./Icon";
+import Time from "./Time";
 
 export default function Weather({ data }) {
   return (
@@ -8,9 +9,7 @@ export default function Weather({ data }) {
       <div className="row align-items-center current-day">
         <div className="col">
           <h1>{data.name}</h1>
-          <div className="time">
-            Last uptated: <span>Monday 12:05</span>
-          </div>
+          <Time date={data.date} />
           <div className="description">{data.description}</div>
         </div>
         <div className="col text-center">
