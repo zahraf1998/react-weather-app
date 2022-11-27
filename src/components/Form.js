@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 
-export default function Form({ changeCity, getData }) {
+export default function Form({ changeCity }) {
+  const [city, setCity] = useState("");
+
   function handleChange(e) {
-    changeCity(e.target.value);
+    setCity(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    getData();
+    changeCity(city);
   }
 
   return (
@@ -16,7 +18,7 @@ export default function Form({ changeCity, getData }) {
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <div className="row text-center">
-            <div className="col-8">
+            <div className="col-10">
               <input
                 type="search"
                 placeholder="Enter a city ..."
@@ -30,11 +32,11 @@ export default function Form({ changeCity, getData }) {
                 <i className="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
-            <div className="col-3">
+            {/* <div className="col-3">
               <button type="button" className="btn btn-secondary location">
                 <i className="fa-solid fa-location-dot"></i>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </form>

@@ -1,18 +1,29 @@
 import React from "react";
 import "./ForecastCard.css";
+import Icon from "./Icon";
 
-export default function ForecastCard() {
+export default function ForecastCard({ data }) {
+  function date() {
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const day = new Date(data.dt * 1000).getDay();
+    return days[day];
+  }
+
   return (
-    <div className="col-3 col-sm-2 p-1">
-      <div className="card text-bg-light mb-3 forecast-container">
-        <div className="card-header forecast-date">Tue</div>
-        <div className="card-body p-1 forecast-img">
-          {/* <img src={icon} className="forecast-img" alt="weather icon"></img> */}
-        </div>
-        <div className="card-footer p-1 pt-2 pb-2 forecast-temp">
-          <span className="forecast-temp-max"> 18° </span>
-          <span className="forecast-temp-min text-muted"> 10°</span>
-        </div>
+    <div className="card text-bg-light mb-3 forecast-container">
+      <div className="card-header forecast-date">{date()}</div>
+      <div className="card-body p-1 forecast-img">
+        <Icon code={data.weather[0].icon} />{" "}
+      </div>
+      <div className="card-footer p-1 pt-2 pb-2 forecast-temp">
+        <span className="forecast-temp-max">
+          {" "}
+          {Math.round(data.temp.max)}°{" "}
+        </span>
+        <span className="forecast-temp-min text-muted">
+          {" "}
+          {Math.round(data.temp.min)}°
+        </span>
       </div>
     </div>
   );
