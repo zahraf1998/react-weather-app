@@ -1,6 +1,6 @@
 import React from "react";
-import "./ForecastCard.css";
 import Icon from "./Icon";
+import "./ForecastCard.css";
 
 export default function ForecastCard({ data }) {
   function date() {

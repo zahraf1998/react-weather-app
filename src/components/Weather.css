@@ -1,3 +1,9 @@
+ul {
+  margin-top: 10px;
+  padding: 0;
+  font-size: 16px;
+}
+
 .current-day {
   background: #c3e7f4;
   border-radius: 5px;

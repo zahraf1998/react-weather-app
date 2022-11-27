@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ForecastCard from "./ForecastCard";
 import axios from "axios";
-import "./Forecast.css";
 
 export default function Forecast({ coord }) {
   const [data, setData] = useState("");
@@ -9,11 +8,11 @@ export default function Forecast({ coord }) {
   useEffect(() => {
     const lat = coord.lat;
     const lon = coord.lon;
-    const apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
+    const apiKey = "2718952144ed077c12e7c160fb6fc351";
     const units = "metric";
     const forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
+
     axios.get(forecastUrl).then((response) => {
-      console.log("response");
       setData(response.data);
     });
   }, [coord]);
@@ -30,5 +29,7 @@ export default function Forecast({ coord }) {
         })}
       </div>
     </div>
-  ) : null;
+  ) : (
+    ""
+  );
 }
