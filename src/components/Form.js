@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form.css";
 
 export default function Form({ changeCity }) {
   const [city, setCity] = useState("");
@@ -10,7 +9,7 @@ export default function Form({ changeCity }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    changeCity(city);
+    if (city) changeCity(city);
   }
 
   return (
